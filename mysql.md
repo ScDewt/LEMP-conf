@@ -30,7 +30,6 @@ flush privileges;
 
 # Tuning
 
-
 ```bash
 # key_buffer_size variable controls the amount of memory available for the MySQL index buffer. 
 # The higher this value, the more memory available for indexes and the better the performance. 
@@ -48,7 +47,6 @@ thread_stack            = 512K
 # ranges from 8 to 100, depending on the load and amount of memory.
 thread_cache_size       = 16
 ```
-
 
 
 # Links
