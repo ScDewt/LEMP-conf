@@ -95,8 +95,9 @@ http {
 
     # to boost I/O on HDD we can disable access logs
     # access_log off;
-
-
+    
+    # disabled TLSv1.3 because poodle vulnerability (see links)
+    ssl_protocols TLSv1 TLSv1.1 TLSv1.2;
 
     # copies data between one FD and other from within the kernel
     # faster than read() + write()
@@ -190,5 +191,6 @@ http {
 - https://gist.github.com/denji/8359866 
 - https://www.nginx.com/resources/wiki/start/topics/examples/fullexample2/
 - https://www.digitalocean.com/community/tutorials/how-to-optimize-nginx-configuration
+- ssl v3 poodle https://venafi.com/blog/these-recently-discovered-poodles-can-bypass-your-tls/
 
 
