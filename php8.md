@@ -4,6 +4,13 @@
 sudo apt-get install php8.1-fpm php8.1-bcmath php8.1-bz2 php8.1-cli php8.1-common php8.1-curl php8.1-gmagick php8.1-mbstring php8.1-memcached php8.1-mysql php8.1-opcache php8.1-tidy php8.1-xml php8.1-xsl
 ```
 
+Install memcached if needed (e.g. for php sessions)
+```bash
+sudo apt-get install memcached
+sudo apt-get install libmemcached-tools
+sudo systemctl start memcached
+```
+
 # Tuning fpm
 ```bash
 # check the limit of open files for the user www-data (!!NOT from under root)
@@ -75,7 +82,7 @@ default_socket_timeout = 10
 
 # speed up work sessions with memcached
 session.save_handler = memcached
-session.save_path = "tcp://localhost:11211"
+session.save_path = "localhost:11211"
 ```
 
 # Links
